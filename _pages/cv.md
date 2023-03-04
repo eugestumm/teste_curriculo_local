@@ -11,9 +11,10 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+
+* B.A. in **Psychology**, Federal University of Health Sciences of Porto Alegre, 2021
+* M.A. in **Psychology**, Federal University of Rio Grande do Sul, 2022
+* Ph.D. in **Literary, Cultural, and Linguistic Studies**, University of Miami, 2027 (expected)
 
 Work experience
 ======
@@ -26,34 +27,20 @@ Work experience
   * Github University
   * Duties included: Merging pull requests
   * Supervisor: Professor Hub
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
 
 Publications
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+
+{% include_relative publications.md %}
   
 Talks
 ======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
+
+{% include_relative talks.md %}
   
 Teaching
 ======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+
+{% capture teaching_content %}{% include_relative teaching.md %}{% endcapture %}
+{{ teaching_content | remove_first: "---\n" | markdownify }}
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
